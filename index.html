@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BELAJAR JARINGAN - HACKER BAIK</title>
+<style>
+body{background:black;color:#00ff00;font-family:monospace;padding:15px}
+h1{text-align:center;font-size:22px}
+h2{color:white;border-bottom:2px solid #00ff00;padding-bottom:5px;margin-top:30px}
+.kotak{border:1px solid #00ff00;padding:15px;margin:12px 0;border-radius:10px}
+pre{background:#111;color:#00ff00;padding:12px;overflow-x:auto;font-size:14px;white-space:pre-wrap;border:1px solid #333}
+.fungsi{background:#003300;padding:10px;border-radius:6px;margin-top:10px}
+button{background:#00ff00;color:black;font-size:18px;padding:12px;border:none;font-weight:bold;width:100%;margin-top:10px}
+.tombol-kecil{width:auto;padding:8px 15px;font-size:14px;margin:5px}
+.bahaya{background:#331100;color:#ffcc00;padding:10px;border:1px solid #ffcc00;border-radius:6px}
+.biru{background:#001133;color:#00ccff;padding:10px;border:1px solid #00ccff;border-radius:6px}
+</style>
+</head>
+<body>
+<h1>🌐 BELAJAR JARINGAN HACKER BAIK 🌐</h1>
+<p style="text-align:center">IPCONFIG, PING, NETSTAT, SAMPE BISA LIAT WIFI!</p>
+<p style="text-align:center">
+<a href="index.html"><button class="tombol-kecil">GAME</button></a>
+<a href="terminal.html"><button class="tombol-kecil">TERMINAL</button></a>
+<a href="belajar.html"><button class="tombol-kecil">BELAJAR KODE</button></a>
+<a href="rapor.html"><button class="tombol-kecil">RAPOR</button></a>
+</p>
+<hr>
+
+<div class="kotak">
+<h2>0. INTERNET ITU APA? BAYANGIN KAMPUNG!</h2>
+<p>Bayangin internet itu kayak kampung gede:</p>
+<p>- <b>IP Address</b> = Alamat rumah lu. Contoh: 192.168.1.5<br>
+- <b>Router / WiFi</b> = Gerbang kampung<br>
+- <b>Server Google</b> = Warung gede di kampung sebelah<br>
+- <b>Ping</b> = Lu teriak "HALO!" ke warung itu, terus warungnya jawab "HALO BALIK!"</p>
+<div class="biru"><b>CONTOH IP:</b><br>
+- 192.168.1.1 = Biasanya alamat Router / WiFi lu<br>
+- 192.168.1.5 = Alamat HP lu<br>
+- 8.8.8.8 = Alamat Google (DNS Google)<br>
+- 127.0.0.1 = Alamat diri sendiri (localhost) = "rumah gue sendiri"</div>
+</div>
+
+<div class="kotak">
+<h2>1. ipconfig - LIAT KTP INTERNET LU (Windows)</h2>
+<pre>ipconfig
+ipconfig /all</pre>
+<div class="fungsi"><b>FUNGSI:</b> Liat alamat IP lu, alamat WiFi lu, dll.<br><br>
+- <b>ipconfig</b> = Liat yang penting-penting aja<br>
+- <b>ipconfig /all</b> = Liat SEMUA detail lengkap<br><br>
+<b>YANG DICARI:</b><br>
+- IPv4 Address = IP HP / Laptop lu. Contoh: 192.168.1.5<br>
+- Default Gateway = IP Router WiFi lu. Contoh: 192.168.1.1<br>
+- Subnet Mask = Biasanya 255.255.255.0</div>
+
+<h2>2. ifconfig / ip a - VERSI LINUX / TEREMUX</h2>
+<pre>ifconfig
+ip a</pre>
+<div class="fungsi"><b>FUNGSI:</b> Sama kayak ipconfig, tapi buat Linux & Termux (HP Android).<br>
+- Di Termux, lu ketik <b>ip a</b> atau <b>ifconfig</b><br>
+- Cari yang tulisannya <b>wlan0</b> = itu WiFi lu</div>
+</div>
+
+<div class="kotak">
+<h2>3. ping - NGETES NYAMBUNG APA ENGGAK?</h2>
+<pre>ping google.com
+ping 8.8.8.8
+ping 192.168.1.1
+ping -t google.com</pre>
+<div class="fungsi"><b>FUNGSI:</b> Ngetes apakah lu nyambung ke tempat itu, dan seberapa cepet.<br><br>
+- <b>ping google.com</b> = Teriak ke Google, dibales gak?<br>
+- <b>ping 8.8.8.8</b> = Teriak ke IP Google langsung<br>
+- <b>ping 192.168.1.1</b> = Teriak ke Router WiFi lu, nyambung gak?<br>
+- <b>ping -t google.com</b> = Teriak terus-terusan sampe lu pencet Ctrl + C (di Windows)<br><br>
+<b>CARA BACA HASILNYA:</b><br>
+- Reply from ... time=15ms = BERHASIL! 15ms itu cepet banget! Makin kecil makin bagus.<br>
+- Request timed out = GAGAL! Gak dibales. Bisa WiFi mati, atau servernya mati.<br>
+- time=200ms = Lemot! Lagi ngelag.<br><br>
+<b>ATURAN HACKER BAIK:</b><br>
+- Ping ke 192.168.1.1 dulu. Kalau gagal, berarti WiFi lu yang rusak.<br>
+- Kalau ke Router berhasil tapi ke google.com gagal, berarti internetnya yang mati.</div>
+</div>
+
+<div class="kotak">
+<h2>4. netstat - SIAPA AJA YANG NYAMBUNG?</h2>
+<pre>netstat
+netstat -an
+netstat -a</pre>
+<div class="fungsi"><b>FUNGSI:</b> Liat semua koneksi yang lagi jalan di komputer lu.<br><br>
+- <b>netstat</b> = Liat koneksi yang lagi aktif<br>
+- <b>netstat -an</b> = Liat SEMUA, pake angka IP, bukan nama<br>
+- <b>netstat -a</b> = Liat semua yang lagi dengerin (listening) + yang nyambung<br><br>
+<b>CARA BACA:</b><br>
+- LISTENING = Lagi nunggu ada yang nyambung. Kayak warung lagi buka, nunggu pembeli.<br>
+- ESTABLISHED = Udah nyambung! Lagi ngobrol.<br>
+- TIME_WAIT = Baru aja putus, lagi nunggu bentar.<br><br>
+<b>CONTOH:</b> Kalau lu liat ada ESTABLISHED ke IP aneh yang lu gak kenal, itu bisa jadi ada program mencurigakan!</div>
+
+<h2>5. tracert / traceroute - JALUR PAKET LU LEWAT MANA?</h2>
+<pre>tracert google.com
+traceroute google.com</pre>
+<div class="fungsi"><b>FUNGSI:</b> Nunjukin paket internet lu lewat mana aja sampe ke Google.<br>
+- <b>tracert google.com</b> = di Windows<br>
+- <b>traceroute google.com</b> = di Linux / Termux<br><br>
+Contoh: Dari HP lu -> Router -> Provider -> Jakarta -> Singapura -> Google. Makin banyak lompatan, makin lama.</div>
+</div>
+
+<div class="kotak">
+<h2>6. nslookup - NANYA ALAMAT IP NYA GOOGLE</h2>
+<pre>nslookup google.com
+nslookup youtube.com</pre>
+<div class="fungsi"><b>FUNGSI:</b> Nanya ke DNS, "Eh, alamat rumahnya google.com itu IP berapa?"<br>
+Nanti dijawab: google.com itu IP nya 142.250.x.x<br>
+<b>DNS</b> = Buku telepon internet. Lu ketik nama, dia kasih IP nya.</div>
+
+<h2>7. arp -a - LIAT SIAPA AJA DI WIFI LU!</h2>
+<pre>arp -a</pre>
+<div class="fungsi"><b>FUNGSI:</b> Liat semua HP / Laptop yang lagi nyambung ke WiFi yang sama kayak lu.<br>
+Kalau lu liat ada IP yang lu gak kenal, bisa jadi ada tetangga yang numpang WiFi lu!<br>
+<b>INGET:</b> Cuma buat liat, jangan diusilin. Hacker baik cuma ngecek, bukan ngerusak.</div>
+</div>
+
+<div class="kotak">
+<h2>8. hostname - NAMA KOMPUTER LU</h2>
+<pre>hostname
+hostname -I</pre>
+<div class="fungsi"><b>FUNGSI:</b><br>
+- <b>hostname</b> = Nama komputer / HP lu di jaringan<br>
+- <b>hostname -I</b> = Langsung kasih tau IP lu aja (di Linux)</div>
+
+<h2>9. ipconfig /flushdns - BENERIN INTERNET NGELAG</h2>
+<pre>ipconfig /flushdns</pre>
+<div class="fungsi"><b>FUNGSI:</b> Bersihin cache DNS yang udah kadaluarsa. Kadang internet ngelag karena cache nya numpuk. Abis ketik ini, internet jadi seger lagi. Ini trik teknisi warnet!</div>
+</div>
+
+<div class="kotak">
+<h2>🔥 LATIHAN HACKER BAIK - COBAIN URUTAN INI DI CMD / TERMUX!</h2>
+<pre>1. ipconfig
+2. ping 192.168.1.1
+3. ping google.com
+4. ping 8.8.8.8
+5. netstat -an
+6. arp -a
+7. nslookup google.com
+8. tracert google.com</pre>
+<div class="fungsi"><b>ARTINYA:</b><br>
+1. Cek IP gue berapa? -> 2. Router gue nyambung gak? -> 3. Google nyambung gak? -> 4. IP Google nyambung gak? -> 5. Siapa aja yang nyambung ke gue? -> 6. Siapa aja di WiFi gue? -> 7. IP nya Google berapa? -> 8. Jalurnya lewat mana?<br><br>
+<b>KALAU LU UDAH BISA BACA HASIL SEMUA INI, LU UDAH LULUS JARINGAN LEVEL 1!</b></div>
+</div>
+
+<div class="kotak">
+<h2>🎯 KAMUS CEPET JARINGAN</h2>
+<p>
+<b>ipconfig / ifconfig</b> = Liat KTP internet gue<br>
+<b>ping</b> = Teriak "HALO!" dibales gak?<br>
+<b>netstat</b> = Siapa aja yang lagi nyambung?<br>
+<b>tracert</b> = Lewat jalan mana?<br>
+<b>nslookup</b> = Alamat IP nya si google.com berapa?<br>
+<b>arp -a</b> = Siapa aja di WiFi gue?<br>
+<b>hostname</b> = Nama komputer gue<br>
+<b>IP</b> = Alamat rumah di internet<br>
+<b>DNS</b> = Buku telepon internet<br>
+<b>Router</b> = Gerbang WiFi<br>
+<b>ms</b> = Milidetik, makin kecil makin cepet
+</p>
+</div>
+
+<div class="bahaya"><b>⚠ ATURAN HACKER BAIK:</b><br>
+- Boleh ngecek jaringan LU SENDIRI.<br>
+- Boleh ngecek WiFi rumah LU SENDIRI.<br>
+- JANGAN pernah ping / netstat / nyerang WiFi orang lain tanpa izin. Itu namanya hacker jahat, bukan hacker baik!<br>
+- Hacker baik = Ngecek buat ngelindungin, bukan buat ngerusak.</div>
+
+<p style="text-align:center;font-weight:bold;font-size:18px">LU UDAH BISA JARINGAN BANG! 🔥</p>
+<a href="terminal.html"><button>⬅ BALIK KE TERMINAL</button></a>
+<a href="belajar.html"><button>BALIK KE BELAJAR KODE</button></a>
+<a href="index.html"><button>MAIN GAME LAGI</button></a>
+
+</body>
+</html>
